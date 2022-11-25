@@ -1,0 +1,19 @@
+<h2>All images</h2>
+<hr />
+<table class="table" *ngIf="images.length > 0">
+    <tr>
+      <th>Original image</th>
+      <th>Thumbnail image</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let i of images;">
+      <td  class="img-wraps" *ngIf="i.cover.original.path"><span class="closes" title="Delete" (click)="deleteoriginalimage(i)">×</span><img
+          [src]="i.cover.original.path" /></td>
+
+      <td class="img-wraps" *ngIf="i.cover.thumbnail.path" ><span class="closes" title="Delete" (click)="deletethumbimage(i)">×</span>
+        <img  [src]="i.cover.thumbnail.path"/></td> 
+      <td> <button (click)="deleteimage(i)">Delete</button></td>
+    </tr>
+  <div>
+  </div>
+</table>
